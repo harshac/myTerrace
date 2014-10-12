@@ -1,0 +1,22 @@
+<%= form_for 'search', url: search_path do |f| %>
+    <div>
+    I'm looking
+    <%=  f.radio_button 'action', value: 'rent'%> to rent
+    <%=  f.radio_button 'action', value: 'let'%> to let
+    </div>
+    <div>
+     on the
+    <%= f.check_box 'dates', {multiple: true}, '14 Jan 2015', nil %> 14th Jan
+    <%= f.check_box 'dates', {multiple: true}, '15 Jan 2015', nil %> 15th Jan
+    </div>
+
+    <div>
+      for <%= f.select 'persons', [['0 to 10 persons', 10], ['11 to 20 persons', 20], ['21 to 30 persons', 30]] %>
+    </div>
+
+    <div>
+      location <%= f.select 'location', [['location 1'], ['location 2']] %>
+    </div>
+
+    <%= f.submit 'Go'%>
+<% end %>
