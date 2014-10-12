@@ -1,10 +1,10 @@
 class SearchController < ApplicationController
   def index
-    query = params[:search]
+    query = params[:terrace]
 
     base_query = Terrace.
         where(location: query[:location]).
-        where('capacity >= ?', query[:persons])
+        where('capacity >= ?', query[:capacity])
 
     @terraces = query[:dates].each_with_index.inject(base_query) do |query, (date,i)|
       base_query.

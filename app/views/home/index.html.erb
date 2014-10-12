@@ -1,4 +1,4 @@
-<%= form_for 'search', url: search_path do |f| %>
+<%= form_for 'terrace', url: new_terrace_path, method: :get do |f| %>
     <div>
     I'm looking
     <%=  f.radio_button 'action', value: 'rent'%> to rent
@@ -11,7 +11,7 @@
     </div>
 
     <div>
-      for <%= f.select 'persons', [['0 to 10 persons', 10], ['11 to 20 persons', 20], ['21 to 30 persons', 30]] %>
+      for <%= f.select 'capacity', [['0 to 10 persons', 10], ['11 to 20 persons', 20], ['21 to 30 persons', 30]] %>
     </div>
 
     <div>

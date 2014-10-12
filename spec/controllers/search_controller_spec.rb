@@ -10,9 +10,9 @@ RSpec.describe SearchController, :type => :controller do
       terrace1 = FactoryGirl.create(:terrace, location: "central chowk")
       FactoryGirl.create(:availability, terrace: terrace1)
 
-      get :index, search: { dates: ['14 Jan 2015'],
+      get :index, terrace: { dates: ['14 Jan 2015'],
                             location: 'central chowk',
-                            persons: '20'
+                            capacity: '20'
                           }
 
       expect(assigns(:terraces)).to include(terrace1)
@@ -24,15 +24,26 @@ RSpec.describe SearchController, :type => :controller do
       FactoryGirl.create(:availability, terrace: terrace, date: Date.parse('14 Jan 2015'))
       FactoryGirl.create(:availability, terrace: terrace, date: Date.parse('15 Jan 2015'))
 
+      terrace1 = FactoryGirl.create(:terrace, location: 'Central Chowk')
+      FactoryGirl.create(:availability, terrace: terrace1, date: Date.parse('14 Jan 2015'))
 
+      terrace2 = FactoryGirl.create(:terrace, capacity: 10)
+      FactoryGirl.create(:availability, terrace: terrace2, date: Date.parse('14 Jan 2015'))
+      FactoryGirl.create(:availability, terrace: terrace2, date: Date.parse('15 Jan 2015'))
 
-      get :index, search: { dates: ['14 Jan 2015', '15 Jan 2015'],
+      terrace3 = FactoryGirl.create(:terrace, capacity: 30)
+      FactoryGirl.create(:availability, terrace: terrace3, date: Date.parse('14 Jan 2015'))
+      FactoryGirl.create(:availability, terrace: terrace3, date: Date.parse('15 Jan 2015'))
+
+      get :index, terrace: { dates: ['14 Jan 2015', '15 Jan 2015'],
                             location: 'ahmedabad pol',
-                            persons: '20'
+                            capacity: '20'
       }
 
       expect(assigns(:terraces)).to include(terrace)
+      expect(assigns(:terraces)).to include(terrace3)
+      expect(assigns(:terraces)).to_not include(terrace1)
+      expect(assigns(:terraces)).to_not include(terrace2)
     end
   end
-
 end
