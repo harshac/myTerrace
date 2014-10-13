@@ -21,7 +21,7 @@
 }
 
 .default-dropdown{
-  background: url("drop_list.png") no-repeat 100%;
+  background: image-url("drop_list.png") no-repeat 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -45,5 +45,5 @@
 }
 
 #persons-label{
-  background: url("persons_icon.png") no-repeat 51% 0;
+  background: image-url("persons_icon.png") no-repeat 51% 0;
 }
