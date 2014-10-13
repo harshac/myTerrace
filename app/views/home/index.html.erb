@@ -1,22 +1,39 @@
-<%= form_for 'terrace', url: new_terrace_path, method: :get do |f| %>
-    <div>
-    I'm looking
-    <%=  f.radio_button 'action', value: 'rent'%> to rent
-    <%=  f.radio_button 'action', value: 'let'%> to let
-    </div>
-    <div>
-     on the
-    <%= f.check_box 'dates', {multiple: true}, '14 Jan 2015', nil %> 14th Jan
-    <%= f.check_box 'dates', {multiple: true}, '15 Jan 2015', nil %> 15th Jan
-    </div>
+<div class="default-form-container">
+  <%= form_for 'terrace', url: new_terrace_path, method: :get, html: {id: 'action-form'} do |f| %>
+      <div class="default-input-container">
+        <strong>I'm looking</strong>
+        <ul class="default-list">
+          <li><%= f.radio_button 'action', 'rent' %> to rent</li>
+          <li><%= f.radio_button 'action', 'let' %> to let</li>
+          <li><strong>a terrace</strong></li>
+        </ul>
 
-    <div>
-      for <%= f.select 'capacity', [['0 to 10 persons', 10], ['11 to 20 persons', 20], ['21 to 30 persons', 30]] %>
-    </div>
+      </div>
+      <div class="default-input-container">
+        <strong>on the</strong>
+        <ul class="default-list">
+          <li><%= f.check_box 'dates', {multiple: true}, '14 Jan 2015', nil %> 14th</li>
+          <li><%= f.check_box 'dates', {multiple: true}, '15 Jan 2015', nil %> 15th</li>
+          <li><strong>of January</strong></li>
+        </ul>
+      </div>
 
-    <div>
-      location <%= f.select 'location', [['location 1'], ['location 2']] %>
-    </div>
+      <div class="default-input-container">
+        <strong id="persons-label">for</strong>
+        <%= f.select 'capacity',
+                     [['0 to 10 persons', 10], ['11 to 20 persons', 20], ['21 to 30 persons', 30]],
+                     {}, {class: 'default-dropdown'} %>
+      </div>
 
-    <%= f.submit 'Go'%>
-<% end %>
+      <div class="default-input-container">
+        <strong>location</strong> <%= f.select 'location',
+                                               [['location 1'], ['location 2']],
+                                               {}, {class: 'default-dropdown'}%>
+      </div>
+
+      <div class="default-input-container default-btn-container">
+        <%= f.submit 'Go', {:class => 'default-btn'} %>
+      </div>
+  <% end %>
+</div>
+

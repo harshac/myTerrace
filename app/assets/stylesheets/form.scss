@@ -1,0 +1,49 @@
+.default-form-container {
+  strong {
+    display: inline-block;
+    min-width: 88px;
+  }
+}
+
+.default-input-container{
+  padding: 6px 0px;
+}
+
+.default-list {
+  list-style-type: none;
+  padding: 6px 0px;
+  margin: 0px;
+
+  li {
+    display:inline-block;
+    min-width: 84px;
+  }
+}
+
+.default-dropdown{
+  background: url("drop_list.png") no-repeat 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 188px;
+  padding: 2px 6px;
+  line-height: 1.7em;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.default-btn{
+  background: #a673ad;
+  border-radius: 3px;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  border: none;
+  min-width: 66px;
+  height: 28px;
+  color: #fff;
+  font-size: 14px;
+}
+
+#persons-label{
+  background: url("persons_icon.png") no-repeat 51% 0;
+}

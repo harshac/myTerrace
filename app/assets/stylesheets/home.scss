@@ -1,0 +1,32 @@
+.default-form-container {
+  background: #f6fcfc;
+  min-height: 300px;
+  width: 280px;
+
+  margin-left: 210px;
+  margin-top: 70px;
+
+  padding: 30px 40px;
+
+  border-radius: 3px;
+  color: #a366ae;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+.default-input-container{
+  padding: 6px 0px;
+}
+
+.default-btn-container{
+  padding-top: 28px !important;
+}
+
+.default-list {
+  list-style-type: none;
+  padding: 6px 0px;
+  margin: 0px;
+  li {
+    display:inline-block;
+  }
+}

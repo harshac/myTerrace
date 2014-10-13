@@ -1,6 +1,9 @@
-.container{
-  border: 1px solid;
-
+body{
+  background: #000 url('home_bg.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  padding: 0;
+  margin: 0;
 }
 
 .main-header {
@@ -31,5 +34,8 @@
 }
 
 .main-footer {
-  min-height: 20px;
+  min-height: 40px;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  border: #fff solid;
 }
