@@ -1,0 +1,37 @@
+.new-form-container {
+  margin-left: 150px;
+  margin-top: 50px;
+  font-family: Futura, Arial, sans-serif;
+
+  h3 {
+    color: #21cae7;
+    margin-left: 100px;
+  }
+
+  .sub-title {
+    color: #44958f;
+    margin-left: 103px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    min-width: 100px;
+    display: inline-block;
+    margin: 0;
+  }
+
+  input, select{
+    display: inline-block;
+    position: relative;
+    min-width: 220px;
+    height: 24px;
+    border-radius: 3px;
+    border: none;
+  }
+}
+
+#terrace-submit-btn {
+  background: #21cae7;
+  min-width: 100px;
+  margin-left: 230px;
+}

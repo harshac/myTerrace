@@ -1,38 +1,54 @@
-<%= form_for @terrace do |f| %>
+<div class="new-form-container">
+  <h3> Post my Terrace</h3>
 
-    <%= f.fields_for :owner do |o| %>
-        Name : <%= o.text_field :name %>
-    <%- end %>
+  <div class="sub-title">Share details about your terrace</div>
+  <%= form_for @terrace, html: {id: 'terrace-from'} do |f| %>
+      <div class="default-input-container">
+        <%= f.fields_for :owner do |o| %>
+            <p class="label"> Name </p>
+            <%= o.text_field :name %>
+        <%- end %>
+      </div>
 
-    <div>
-      Location: <%= f.select 'location', [['location 1'], ['location 2']]%>
-    </div>
+      <div class="default-input-container">
+        <p class="label"> Location </p>
+        <%= f.select 'location', [['location 1'], ['location 2']] %>
+      </div>
 
-    <div>
-      Area: <%= f.text_field :area %>
-    </div>
+      <div class="default-input-container">
+        <p class="label">Area </p>
+        <%= f.text_field :area %>
+      </div>
 
-    <div>
-      Capacity: <%= f.select 'capacity', [['0 to 10 persons', 10], ['11 to 20 persons', 20], ['21 to 30 persons', 30]] %>
-    </div>
+      <div class="default-input-container">
+        <p class="label">Capacity </p>
+        <%= f.select 'capacity', [['0 to 10 persons', 10], ['11 to 20 persons', 20], ['21 to 30 persons', 30]] %>
+      </div>
 
-    <div>
       <%= f.fields_for :owner do |o| %>
-          Contact: <%= o.text_field :phone %>
-          Email: <%= o.text_field :email %>
+          <div class="default-input-container">
+            <p class="label">Contact </p>
+            <%= o.text_field :phone %>
+          </div>
+
+          <div class="default-input-container"><p class="label">Email </p>
+            <%= o.text_field :email %>
+          </div>
       <%- end %>
-    </div>
 
-    <div>
-      Rent: <%= f.text_field :rent %>
-    </div>
 
-    <div>
-      <%= f.fields_for :availabilities do |a| %>
-          <%= a.hidden_field :date%>
-      <%- end %>
-    </div>
+      <div class="default-input-container">
+        <p class="label">Rent </p>
+        <%= f.text_field :rent %>
+      </div>
 
-    <%= f.submit %>
-
-<%- end %>
+      <div class="default-input-container">
+        <%= f.fields_for :availabilities do |a| %>
+            <%= a.hidden_field :date %>
+        <%- end %>
+      </div>
+      <div class="default-input-container">
+        <%= f.submit 'Submit' ,  {:class => 'default-btn', :id => 'terrace-submit-btn'} %>
+      </div>
+  <%- end %>
+</div>
