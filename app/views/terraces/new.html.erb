@@ -6,40 +6,71 @@
       <div class="default-input-container">
         <%= f.fields_for :owner do |o| %>
             <p class="label"> Name </p>
-            <%= o.text_field :name %>
+
+            <div class="left-icon-addon">
+              <span class="name-icon"></span>
+              <%= o.text_field :name %>
+            </div>
         <%- end %>
       </div>
 
       <div class="default-input-container">
         <p class="label"> Location </p>
-        <%= f.select 'location', [['location 1'], ['location 2']] %>
+
+        <div class="select-container">
+          <span class="location_icon"></span>
+          <%= f.select 'location', [['location 1'], ['location 2']] %>
+
+        </div>
       </div>
 
       <div class="default-input-container">
         <p class="label">Area </p>
-        <%= f.text_field :area %>
+
+        <div class="left-icon-addon" id="area-container">
+          <span class="area-icon"></span>
+          <%= f.text_field :area %>
+          <div id="sq-feet">sq feet</div>
+        </div>
       </div>
 
       <div class="default-input-container">
         <p class="label">Capacity </p>
-        <%= f.select 'capacity', [['0 to 10 persons', 10], ['11 to 20 persons', 20], ['21 to 30 persons', 30]] %>
+
+        <div class="select-container">
+          <span class="persons_icon"></span>
+          <%= f.select 'capacity', [['0 to 10 persons', 10], ['11 to 20 persons', 20], ['21 to 30 persons', 30]] %>
+        </div>
       </div>
 
       <%= f.fields_for :owner do |o| %>
           <div class="default-input-container">
             <p class="label">Contact </p>
-            <%= o.text_field :phone %>
+
+            <div class="left-icon-addon">
+              <span class="contact-icon"></span>
+              <%= o.text_field :phone %>
+            </div>
           </div>
 
-          <div class="default-input-container"><p class="label">Email </p>
-            <%= o.text_field :email %>
+          <div class="default-input-container">
+            <p class="label">Email </p>
+
+            <div class="left-icon-addon">
+              <span class="email-icon"></span>
+              <%= o.text_field :email %>
+            </div>
           </div>
       <%- end %>
 
 
       <div class="default-input-container">
         <p class="label">Rent </p>
-        <%= f.text_field :rent %>
+
+        <div class="left-icon-addon">
+          <span class="rupees-icon"></span>
+          <%= f.text_field :rent %>
+        </div>
       </div>
 
       <div class="default-input-container">
@@ -48,7 +79,7 @@
         <%- end %>
       </div>
       <div class="default-input-container">
-        <%= f.submit 'Submit' ,  {:class => 'default-btn', :id => 'terrace-submit-btn'} %>
+        <%= f.submit 'Submit', {:class => 'default-btn', :id => 'terrace-submit-btn'} %>
       </div>
   <%- end %>
 </div>
