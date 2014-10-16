@@ -20,7 +20,7 @@
   }
 }
 
-.default-dropdown {
+.default-dropdown{
   background: image-url("drop_list.png") no-repeat 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -31,18 +31,6 @@
   border-radius: 3px;
   font-size: 14px;
   margin-top: 6px;
-
-  option {
-    z-index: 9;
-    position: absolute;
-    left: 8px;
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-    padding-top: 4px;
-    background: transparent;
-    color: #666;
-  }
 }
 
 label {
