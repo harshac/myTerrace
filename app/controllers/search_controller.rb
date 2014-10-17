@@ -10,6 +10,7 @@ class SearchController < ApplicationController
       base_query.
           joins("inner join availabilities as a#{i} on a#{i}.terrace_id = terraces.id").
           where(:"a#{i}" => {date: Date.parse(date)})
-    end.uniq
+    end.uniq.paginate(:page => params[:page]).order('id DESC')
+
   end
 end

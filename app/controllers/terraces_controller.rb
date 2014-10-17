@@ -1,6 +1,6 @@
 class TerracesController < ApplicationController
   def index
-    @terraces = Terrace.all
+    @terraces = Terrace.all.paginate(:page => params[:page])
     render 'search/index'
   end
 

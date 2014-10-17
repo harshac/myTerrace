@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe SearchController, :type => :controller do
 
-  describe "Search" do
-    it "should return terraces with selected location, capacity and single date" do
+  describe 'Search' do
+    it 'should return terraces with selected location, capacity and single date' do
       terrace = FactoryGirl.create(:terrace)
       FactoryGirl.create(:availability, terrace: terrace)
 
-      terrace1 = FactoryGirl.create(:terrace, location: "central chowk")
+      terrace1 = FactoryGirl.create(:terrace, location: 'central chowk')
       FactoryGirl.create(:availability, terrace: terrace1)
 
       get :index, terrace: { dates: ['14 Jan 2015'],
@@ -19,7 +19,7 @@ RSpec.describe SearchController, :type => :controller do
       expect(assigns(:terraces)).to_not include(terrace)
     end
 
-    it 'should return terraces with selected location, capacity and multiple dates' do
+    describe 'paginate' do
       terrace = FactoryGirl.create(:terrace)
       FactoryGirl.create(:availability, terrace: terrace, date: Date.parse('14 Jan 2015'))
       FactoryGirl.create(:availability, terrace: terrace, date: Date.parse('15 Jan 2015'))
@@ -35,15 +35,29 @@ RSpec.describe SearchController, :type => :controller do
       FactoryGirl.create(:availability, terrace: terrace3, date: Date.parse('14 Jan 2015'))
       FactoryGirl.create(:availability, terrace: terrace3, date: Date.parse('15 Jan 2015'))
 
-      get :index, terrace: { dates: ['14 Jan 2015', '15 Jan 2015'],
-                            location: 'ahmedabad pol',
-                            capacity: '20'
-      }
+      it 'should return terraces with selected parameters for page 1' do
+        get :index, terrace: { dates: ['14 Jan 2015', '15 Jan 2015'],
+                               location: 'ahmedabad pol',
+                               capacity: '20'
+        }
 
-      expect(assigns(:terraces)).to include(terrace)
-      expect(assigns(:terraces)).to include(terrace3)
-      expect(assigns(:terraces)).to_not include(terrace1)
-      expect(assigns(:terraces)).to_not include(terrace2)
+        expect(assigns(:terraces)).to include(terrace3)
+        expect(assigns(:terraces)).to_not include(terrace)
+        expect(assigns(:terraces)).to_not include(terrace1)
+        expect(assigns(:terraces)).to_not include(terrace2)
+      end
+
+      it 'should return terraces with selected parameters for page 2' do
+        get :index, terrace: { dates: ['14 Jan 2015', '15 Jan 2015'],
+                               location: 'ahmedabad pol',
+                               capacity: '20'}, page: '2'
+
+        expect(assigns(:terraces)).to include(terrace)
+        expect(assigns(:terraces)).to_not include(terrace3)
+        expect(assigns(:terraces)).to_not include(terrace1)
+        expect(assigns(:terraces)).to_not include(terrace2)
+      end
+
     end
   end
 end
