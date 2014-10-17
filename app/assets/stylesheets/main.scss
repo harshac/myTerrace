@@ -13,6 +13,11 @@ body.home{
     background: #000 image-url('home_bg.png') no-repeat center center fixed;
 }
 
+body.search{
+  background: #000 image-url('search_results_bg.png') no-repeat center center fixed;
+  color: #000;
+}
+
 .container{
   margin: 0;
   padding: 0;

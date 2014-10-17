@@ -1,3 +1,36 @@
 <% @terraces.each do |terrace| %>
-    <%= terrace.owner.name %>
+    <div class="search-result">
+      <div class="search-result-main-col">
+        <div>
+          <span class="connector">
+            <strong>Area:</strong>
+            <%= terrace.area %>
+          </span>
+          <span>
+            <%= terrace.location %>
+          </span>
+        </div>
+        <div>
+          <span>
+            <strong> Posted by:</strong>
+            <%= terrace.owner.name %>
+          </span>
+          <span>
+                <%= terrace.owner.phone %>
+          </span>
+          <span>
+                <%= terrace.owner.email %>
+          </span>
+        </div>
+      </div>
+
+      <div class="search-result-right-col">
+        <div class="rent-container">
+          <%= terrace.rent %>
+        </div>
+        <div class="date-container">
+          <%= terrace.updated_at.strftime('%b %d') %>
+        </div>
+      </div>
+    </div>
 <% end %>

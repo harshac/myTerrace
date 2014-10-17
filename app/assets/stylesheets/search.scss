@@ -1,0 +1,58 @@
+.search-result {
+  margin-left: 120px;
+  margin-top: 25px;
+  position: relative;
+  background: #fff;
+  border-radius: 3px;
+  border: #fff;
+  height: 100px;
+  width: 600px;
+  font-size: 16px;
+  color: #000;
+}
+
+.search-result-main-col {
+  margin-left: 80px;
+  margin-right: 0;
+  float: left;
+  width: 350px;
+
+  span{
+    margin: 20px;
+    margin-right: 0;
+  }
+
+  strong{
+    margin-right: 10px;
+    color: #7ad0c9;
+  }
+
+  div {
+    margin: 10px;
+  }
+}
+
+.search-result-right-col {
+  float: right;
+  padding: 10px;
+  width: 120px;
+}
+
+span.connector {
+  padding-right: 20px;
+  border-right: #000 solid 2px;
+}
+
+.rent-container{
+  background: image_url("rupees_icon.png") no-repeat 0 40%;
+  padding-left: 30px;
+  font-size: 24px;
+}
+
+.date-container{
+  position: absolute;
+  top: 70px;
+  font-size: 12px;
+  left: 556px;
+}
+
