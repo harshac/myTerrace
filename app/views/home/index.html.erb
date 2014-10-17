@@ -1,9 +1,9 @@
 <div class="default-form-container">
-  <%= form_for 'terrace', url: new_terrace_path, method: :get, html: {id: 'action-form'} do |f| %>
+  <%= form_for 'terrace', url: search_path, method: :get, html: {id: 'action-form'} do |f| %>
       <div class="default-input-container">
         <strong>I'm looking</strong>
         <ul class="default-list">
-          <li><%= f.radio_button 'action', 'rent' %> to rent</li>
+          <li><%= f.radio_button 'action', 'rent', checked: true %> to rent</li>
           <li><%= f.radio_button 'action', 'let' %> to let</li>
           <li><strong>a terrace</strong></li>
         </ul>
