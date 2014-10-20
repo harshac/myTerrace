@@ -11,8 +11,10 @@
 <body class = <%= "#{controller_name}" %>>
 <div class="container">
   <div class="main-header">
-    Header
-
+    <div class="social-media-container">
+        <%= link_to image_tag(image_url('facebook_icon.png')),'#', {:class => 'media-btn'} %>
+        <%= link_to image_tag(image_url('twitter_icon.png')),'#', {:class => 'media-btn'} %>
+    </div>
   </div>
   <div class="main-content">
     <div class="col-main">
