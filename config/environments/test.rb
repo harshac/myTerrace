@@ -34,7 +34,7 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
-  WillPaginate.per_page = 1
+  WillPaginate.per_page = 2
 
 
   # Raises error for missing translations
