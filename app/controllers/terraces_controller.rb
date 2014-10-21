@@ -15,7 +15,7 @@ class TerracesController < ApplicationController
 
   def create
     Terrace.create(params[:terrace]
-                   .permit(:location, :capacity, :area, :rent,
+                   .permit(:location, :capacity, :area, :rent, :image,
                             owner_attributes: [:name, :phone],
                             availabilities_attributes: [:date]
                            ))

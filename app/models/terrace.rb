@@ -3,5 +3,6 @@ class Terrace < ActiveRecord::Base
   has_many :availabilities
 
   accepts_nested_attributes_for :owner, :availabilities
+	mount_uploader :image, TerraceImageUploader
 
 end

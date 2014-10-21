@@ -72,6 +72,14 @@
           <%= f.text_field :rent %>
         </div>
       </div>
+			<div class="default-input-container">
+        <p class="label">Image </p>
+
+        <div class="left-icon-addon">
+          <span class="rupees-icon"></span>
+          <%= f.file_field :image, accept: "image/png,image/gif,image/jpeg"%>
+        </div>
+      </div>
 
       <div class="default-input-container">
         <%= f.fields_for :availabilities do |a| %>
