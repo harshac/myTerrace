@@ -77,4 +77,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   WillPaginate.per_page = 20
+
+  $STORAGE_TYPE = :fog
 end

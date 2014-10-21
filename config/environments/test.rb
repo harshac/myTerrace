@@ -36,7 +36,7 @@ Rails.application.configure do
 
   WillPaginate.per_page = 2
 
-
+  $STORAGE_TYPE = :file
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

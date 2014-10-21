@@ -24,7 +24,11 @@
 #terrace-submit-btn {
   background: #21cae7;
   min-width: 100px;
-  margin-left: 270px;
+  margin-left: 70px;
+}
+
+.image-btn{
+
 }
 
 .left-icon-addon {
@@ -57,6 +61,15 @@
     height: 24px;
     position: absolute;
   }
+}
+
+.file-upload-container{
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  width: 255px;
+
+  margin: 0;
 }
 
 .select-container {

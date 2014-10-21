@@ -72,22 +72,20 @@
           <%= f.text_field :rent %>
         </div>
       </div>
-			<div class="default-input-container">
-        <p class="label">Image </p>
-
-        <div class="left-icon-addon">
-          <span class="rupees-icon"></span>
-          <%= f.file_field :image, accept: "image/png,image/gif,image/jpeg"%>
-        </div>
-      </div>
 
       <div class="default-input-container">
         <%= f.fields_for :availabilities do |a| %>
             <%= a.hidden_field :date %>
         <%- end %>
       </div>
+
       <div class="default-input-container">
+        <div class="file-upload-container">
+          <%= f.file_field :image, accept: "image/png,image/gif,image/jpeg", class:'image-btn default-btn'%>
+        </div>
+
         <%= f.submit 'Submit', {:class => 'default-btn', :id => 'terrace-submit-btn'} %>
+
       </div>
   <%- end %>
 </div>
