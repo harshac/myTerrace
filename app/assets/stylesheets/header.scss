@@ -1,12 +1,19 @@
 .main-header {
-  min-height: 66px;
-  padding-top: 30px;
-  background: rgba(74, 72, 71, 0.5);
+  min-height: 90px;
+  padding-top: 10px;
+  background: rgba(255, 255, 255, 0.9);
+
+  .logo-header{
+    height: 80px;
+    float: left;
+    padding-left: 112px;
+  }
 }
 
 .social-media-container{
   float: right;
-  margin-right: 200px;
+  margin-right: 138px;
+  margin-top: 20px;
 }
 
 .media-btn{

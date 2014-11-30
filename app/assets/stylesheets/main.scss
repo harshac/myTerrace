@@ -24,7 +24,7 @@ body.search{
 }
 
 .main-content{
-  min-height: 606px;
+  min-height: 530px;
   &:after {
     content: "";
     display: table;
@@ -44,8 +44,4 @@ body.search{
   float: right;
   margin: 0px;
   padding: 0px;
-}
-
-.main-footer {
-  min-height: 40px;
 }
